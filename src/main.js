@@ -1,29 +1,13 @@
- import { getImagesByQuery } from './js/pixabay-api.js';
- import {
-   createGallery,
-   clearGallery,
-   showLoader,
-   hideLoader,
- } from './js/render-functions.js';
+import { getImagesByQuery } from './js/pixabay-api.js';
+import {
+  createGallery,
+  clearGallery,
+  showLoader,
+  hideLoader,
+} from './js/render-functions.js';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-
-const defaultQuery = 'sunset';
-
-getImagesByQuery(defaultQuery)
-  .then(data => {
-    createGallery(data.hits);
-  })
-  .catch(error => {
-    iziToast.error({
-      title: 'Error',
-      message: 'Не вдалося отримати зображення. Спробуй ще раз!',
-      position: 'topRight',
-    });
-    console.error(error);
-  });
-
 
 const form = document.querySelector('.form');
 const input = form.elements['search-text'];

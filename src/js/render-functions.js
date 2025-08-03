@@ -5,13 +5,12 @@ const galleryContainer = document.querySelector('.gallery');
 const lightbox = new SimpleLightbox('.gallery a');
 
 export function showLoader() {
-  document.querySelector('.loader').style.display = 'block';
+  document.querySelector('.loader').classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-  document.querySelector('.loader').style.display = 'none';
+  document.querySelector('.loader').classList.add('is-hidden');
 }
-
 
 export function createGallery(images) {
   if (!galleryContainer) return;
